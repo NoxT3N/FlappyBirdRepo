@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class object_spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    public float queueTime;
-    public float time = 0;
-    GameObject obstacle;
+    public float queueTime = 1.5f;
+    private float time = 0;
+    GameObject Obstacles;
     public float height;
     // Update is called once per frame
     void Update()
     {
         if(time>queueTime){
-            GameObject go = Instantiate(obstacle);
+            GameObject go = Instantiate(Obstacles);
             go.transform.position = transform.position+
             new Vector3(0,Random.Range(-height, height),0);
             time = 0;
